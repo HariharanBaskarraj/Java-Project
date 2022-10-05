@@ -9,12 +9,13 @@ public class Queries {
 	public static final String SELECTROOMQUERY = "SELECT * FROM Room;";
 	public static final String QUERYBYROOMTYPE = "SELECT * FROM Room WHERE Type=?;";
 	public static final String QUERYBYPGTYPE = "SELECT Room.* FROM PayingGuest INNER JOIN Room ON (PayingGuest.PGId=Room.PGId AND PayingGuest.Category = ?);";
+	public static final String SELECTAVAILABILITYQUERY = "SELECT Availability FROM Room WHERE RoomId = ?";
 	public static final String QUERYBYSHARE = "SELECT * FROM Room WHERE Share=?;";
 	public static final String SELECTPGQUERY = "SELECT * FROM PayingGuest;";
 	public static final String QUERYBYPGID = "SELECT * FROM PayingGuest WHERE PGId=?;";
 	public static final String QUERYBYCATEGORY = "SELECT * FROM PayingGuest WHERE Category=?;";
 	public static final String QUERYBYLOCATION = "SELECT * FROM PayingGuest WHERE Location=?;";
-
+	public static final String APPENDROOMQUERY = "SELECT DISTINCT Room.RoomId,Room.Type,Room.Share,Room.Availability,Room.Price FROM PayingGuest INNER JOIN Room where (Room.PGId=?) ORDER BY RoomId ASC;";
 	public static final String UPDATEROOMQUERY = "UPDATE Room SET Share=? WHERE RoomId=?;";
 	public static final String UPDATEAVAILABILITYQUERY = "UPDATE Room SET Availability=? WHERE RoomId=?;";
 	public static final String UPDATEPGCATEGORY = "UPDATE PayingGuest SET Category=? WHERE PGId=?;";

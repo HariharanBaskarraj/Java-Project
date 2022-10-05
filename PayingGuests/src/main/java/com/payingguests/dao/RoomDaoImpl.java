@@ -146,6 +146,8 @@ public class RoomDaoImpl implements IRoomDao {
 			resultset = statement.executeQuery();
 			mapper = new PayingGuestMapper();
 			rooms = mapper.mapRoomRow(resultset);
+			resultset = statement.executeQuery();
+			
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		} finally {
@@ -300,7 +302,7 @@ public class RoomDaoImpl implements IRoomDao {
 					ResultSet.CONCUR_READ_ONLY);
 			resultset = statement.executeQuery();
 			resultset.beforeFirst();
-			while (resultset.next() == true) {
+			while (resultset.next()) {
 				double price = resultset.getDouble(5);
 				if (price >= min && price <= max) {
 					room = new Room();

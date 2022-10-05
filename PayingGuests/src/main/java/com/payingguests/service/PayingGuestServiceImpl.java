@@ -50,8 +50,7 @@ public class PayingGuestServiceImpl implements IPayingGuestService {
 			throw new PayingGuestNotFoundException("The Paying Guests in the given Location are not available");
 		return payingGuests.stream()
 				.sorted((o1, o2) -> o1.getCategory().compareToIgnoreCase(o2.getCategory()))
-				.collect(Collectors.toList());
-		
+				.collect(Collectors.toList());	
 	}
 
 	@Override
@@ -61,9 +60,7 @@ public class PayingGuestServiceImpl implements IPayingGuestService {
 			throw new PayingGuestNotFoundException("The Paying Guests in the given Category are not available");
 		return payingGuests.stream()
 				.sorted((o1, o2) -> o1.getCategory().compareToIgnoreCase(o2.getCategory()))
-				.collect(Collectors.toList());
-		
-		
+				.collect(Collectors.toList());	
 	}
 
 	@Override

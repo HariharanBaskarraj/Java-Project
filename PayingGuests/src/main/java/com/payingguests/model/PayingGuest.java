@@ -1,21 +1,26 @@
 package com.payingguests.model;
 
+import java.util.List;
+
 public class PayingGuest {
 	private Integer payingGuestId;
 	private String payingGuestName;
 	private String location;
 	private String category;
+	private List<Room> rooms;
 
 	public PayingGuest() {
 		super();
 	}
 
-	public PayingGuest(Integer payingGuestId, String payingGuestName, String location, String category) {
+	public PayingGuest(Integer payingGuestId, String payingGuestName, String location, String category,
+			List<Room> rooms) {
 		super();
 		this.payingGuestId = payingGuestId;
 		this.payingGuestName = payingGuestName;
 		this.location = location;
 		this.category = category;
+		this.rooms = rooms;
 	}
 
 	public Integer getPayingGuestId() {
@@ -50,10 +55,18 @@ public class PayingGuest {
 		this.category = category;
 	}
 
+	public List<Room> getRooms() {
+		return rooms;
+	}
+
+	public void setRooms(List<Room> rooms) {
+		this.rooms = rooms;
+	}
+
 	@Override
 	public String toString() {
-		return "\nPayingGuest [payingGuestId=" + payingGuestId + ", payingGuestName=" + payingGuestName + ", location="
-				+ location + ", category=" + category + "]";
+		return "PayingGuest [payingGuestId=" + payingGuestId + ", payingGuestName=" + payingGuestName + ", location="
+				+ location + ", category=" + category + ", rooms=" + rooms + "]\n";
 	}
 
 }

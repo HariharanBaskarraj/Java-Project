@@ -8,6 +8,5 @@ public interface IUserDao {
 
 	User login(String username, String password);
 
-	int changePassword(String username, String password);
-
+	int changePassword(String username, String oldPassword, String password);
 }

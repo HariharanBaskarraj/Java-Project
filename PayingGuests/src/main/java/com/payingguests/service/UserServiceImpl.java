@@ -22,10 +22,10 @@ public class UserServiceImpl implements IUserService {
 	}
 
 	@Override
-	public int changePassword(String username, String password) {
-		int result = userDao.changePassword(username, password);
+	public int changePassword(String username, String oldPassword,String password) {
+		int result = userDao.changePassword(username, oldPassword, password);
 		if (result == 0)
-			throw new UserNotFoundException();
+			throw new UserNotFoundException("User does not exists");
 		return result;
 	}
 

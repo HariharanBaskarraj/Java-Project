@@ -21,7 +21,8 @@ public class Login {
 		IUserService userService = new UserServiceImpl();
 		User user = null;
 		System.out.println(
-				"Welcome to the Paying Guests Booking App\n1)Are you a new user? Register\n2)Existing user?? Login");
+				"Welcome to the Paying Guests Booking App\n1)Are you a new user? Register\n2)Existing user?? Login"
+				+ "\n3)Change Password");
 		int choice = sc.nextInt();
 		sc.nextLine();
 		switch (choice) {
@@ -53,7 +54,17 @@ public class Login {
 			userService.login(username, password);
 			System.out.println("You are logged in successfully...\n");
 			break;
-
+			
+		case 3:
+			System.out.println("Enter your username:");
+			username=sc.nextLine();
+			System.out.println("Enter your old password:");
+			String oldPassword = sc.nextLine();
+			System.out.println("Enter the new password:");
+			password = sc.nextLine();
+			userService.changePassword(username, oldPassword, password);
+			break;
+			
 		default:
 			System.out.println("Enter valid options!!!");
 			System.exit(0);

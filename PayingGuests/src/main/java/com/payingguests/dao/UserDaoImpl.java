@@ -94,27 +94,30 @@ public class UserDaoImpl implements IUserDao {
 	}
 
 	@Override
-	public int changePassword(String username, String password) {
+	public int changePassword(String username, String oldPassword, String password) {
 		PreparedStatement statement = null;
 		Connection connection = null;
 		int result = 0;
-		try {
-			connection = DbConnection.openConnection();
-			statement = connection.prepareStatement(Queries.PASSWORDUPDATEQUERY, ResultSet.TYPE_SCROLL_INSENSITIVE,
-					ResultSet.CONCUR_READ_ONLY);
-			statement.setString(2, username);
-			statement.setString(1, password);
-			result = statement.executeUpdate();
-		} catch (Exception e) {
-			e.printStackTrace();
-		} finally {
+		User user = login(username, oldPassword);
+		if (user != null) {
 			try {
-				if (statement != null)
-					statement.close();
-			} catch (SQLException e) {
+				connection = DbConnection.openConnection();
+				statement = connection.prepareStatement(Queries.PASSWORDUPDATEQUERY, ResultSet.TYPE_SCROLL_INSENSITIVE,
+						ResultSet.CONCUR_READ_ONLY);
+				statement.setString(2, username);
+				statement.setString(1, password);
+				result = statement.executeUpdate();
+			} catch (Exception e) {
 				e.printStackTrace();
+			} finally {
+				try {
+					if (statement != null)
+						statement.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+				DbConnection.closeConnection();
 			}
-			DbConnection.closeConnection();
 		}
 		return result;
 	}

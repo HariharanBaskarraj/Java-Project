@@ -9,14 +9,15 @@ import com.payingguests.exceptions.RoomNotFoundException;
 import com.payingguests.util.DbConnection;
 import com.payingguests.util.Queries;
 
-/**
- * @author HariharanB
- *
- */
-public class BookDaoImpl implements IBookDao{
-	IRoomDao roomDao = new RoomDaoImpl(); 
+public class BookDaoImpl implements IBookDao {
+	IRoomDao roomDao = new RoomDaoImpl();
+
 	/**
-	 * @param roomId
+	 * This method is responsible for booking the room by the user.
+	 * 
+	 * @author HariharanB
+	 * @param  roomId
+	 * @return Boolean - The update status
 	 * @throws RoomNotFoundException
 	 */
 	@Override
@@ -24,7 +25,7 @@ public class BookDaoImpl implements IBookDao{
 		PreparedStatement statement = null;
 		Connection connection = null;
 		boolean result = false;
-		try { 
+		try {
 			ResultSet resultset = null;
 			connection = DbConnection.openConnection();
 			statement = connection.prepareStatement(Queries.SELECTAVAILABILITYQUERY, ResultSet.TYPE_SCROLL_INSENSITIVE,
@@ -32,10 +33,10 @@ public class BookDaoImpl implements IBookDao{
 			statement.setInt(1, roomId);
 			resultset = statement.executeQuery();
 			resultset.next();
-			result=resultset.getBoolean(1);
-			if (result) 
+			result = resultset.getBoolean(1);
+			if (result)
 				roomDao.updateAvailability(false, roomId);
-			
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -51,7 +52,11 @@ public class BookDaoImpl implements IBookDao{
 	}
 
 	/**
-	 * @param roomId
+	 * This method is responsible for vacating the room by the user.
+	 * 
+	 * @author HariharanB
+	 * @param  roomId
+	 * @return Boolean - The update status
 	 * @throws RoomNotFoundException
 	 */
 	@Override
@@ -59,7 +64,7 @@ public class BookDaoImpl implements IBookDao{
 		PreparedStatement statement = null;
 		Connection connection = null;
 		boolean result = false;
-		try { 
+		try {
 			ResultSet resultset = null;
 			connection = DbConnection.openConnection();
 			statement = connection.prepareStatement(Queries.SELECTAVAILABILITYQUERY, ResultSet.TYPE_SCROLL_INSENSITIVE,
@@ -68,9 +73,9 @@ public class BookDaoImpl implements IBookDao{
 			resultset = statement.executeQuery();
 			result = resultset.next();
 			result = resultset.getBoolean(1);
-			if (!result) 
+			if (!result)
 				roomDao.updateAvailability(true, roomId);
-			
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {

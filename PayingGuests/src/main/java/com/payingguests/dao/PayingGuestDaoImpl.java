@@ -22,7 +22,6 @@ public class PayingGuestDaoImpl implements IPayingGuestDao {
 	 * 
 	 * @author HariharanB
 	 * @param payingGuest Paying Guest object to add the fields to the table
-	 * @see Paying Guest table in the PGAppDB database
 	 * @return Nothing
 	 */
 	@Override
@@ -59,7 +58,6 @@ public class PayingGuestDaoImpl implements IPayingGuestDao {
 	 * @author HariharanB
 	 * @param roomId   The Paying Guest ID for updating
 	 * @param category The category type that needs to be updated
-	 * @see Paying Guest table in the PGAppDB database
 	 * @return Integer - Update status
 	 */
 	@Override
@@ -92,7 +90,6 @@ public class PayingGuestDaoImpl implements IPayingGuestDao {
 	 * the table
 	 * 
 	 * @author HariharanB
-	 * @see Paying Guest table in the PGAppDB database
 	 * @return The list containing all the payingGuest objects
 	 */
 	@Override
@@ -129,7 +126,6 @@ public class PayingGuestDaoImpl implements IPayingGuestDao {
 	 * 
 	 * @author HariharanB
 	 * @param payingGuestId 
-	 * @see Paying Guest table in the PGAppDB database
 	 * @return payingGuest 
 	 */
 	@Override
@@ -172,7 +168,6 @@ public class PayingGuestDaoImpl implements IPayingGuestDao {
 	 * 
 	 * @author HariharanB
 	 * @param location To search for the Paying Guest with the matching location
-	 * @see  Paying Guest table in the PGAppDB database
 	 * @return The list containing the  Paying Guest objects that match user given location
 	 */
 	@Override
@@ -210,7 +205,6 @@ public class PayingGuestDaoImpl implements IPayingGuestDao {
 	 * 
 	 * @author HariharanB
 	 * @param category To search for the rooms with this matching category
-	 * @see Paying Guest table in the PGAppDB database
 	 * @return The list containing the Paying Guest objects that match user given Paying Guest category
 	 */
 	@Override
@@ -248,7 +242,6 @@ public class PayingGuestDaoImpl implements IPayingGuestDao {
 	 * 
 	 * @author HariharanB
 	 * @param payingGuestId The Paying Guest ID for deleting
-	 * @see Paying Guest table in the PGAppDB database
 	 * @return Integer - Update status
 	 */
 	@Override

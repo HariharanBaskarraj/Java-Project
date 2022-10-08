@@ -25,7 +25,6 @@ public class RoomDaoImpl implements IRoomDao {
 	 * @param payingGuestId The Paying Guest ID for the reference to the PayingGuest
 	 *                      table
 	 * @param room          Room object to add the room fields to the table
-	 * @see Room table in the PGAppDB database
 	 * @return Nothing
 	 */
 	@Override
@@ -97,7 +96,6 @@ public class RoomDaoImpl implements IRoomDao {
 	 * @author HariharanB
 	 * @param value True/False based on the occupancy status.
 	 * @param roomId The Room ID for updating
-	 * @see Room table in the PGAppDB database
 	 * @return Integer - Update status
 	 */
 	@Override
@@ -129,7 +127,6 @@ public class RoomDaoImpl implements IRoomDao {
 	 * This method is responsible for retrieving all the Room records from the table
 	 * 
 	 * @author HariharanB
-	 * @see Room table in the PGAppDB database
 	 * @return The list containing all the room objects
 	 */
 	@Override
@@ -168,7 +165,6 @@ public class RoomDaoImpl implements IRoomDao {
 	 * 
 	 * @author HariharanB
 	 * @param roomType To search for the rooms with this matching type
-	 * @see Room table in the PGAppDB database
 	 * @return The list containing the room objects that match user given room type
 	 */
 	@Override
@@ -206,7 +202,6 @@ public class RoomDaoImpl implements IRoomDao {
 	 * 
 	 * @author HariharanB
 	 * @param type To search for the rooms with this matching Paying Guest type
-	 * @see Room and PayingGuest table in the PGAppDB database
 	 * @return The list containing the room objects that match user given Paying
 	 *         Guest type
 	 */
@@ -245,7 +240,6 @@ public class RoomDaoImpl implements IRoomDao {
 	 * 
 	 * @author HariharanB
 	 * @param share To search for the rooms with this matching share type
-	 * @see Room table in the PGAppDB database
 	 * @return The list containing the room objects that match user given share type
 	 */
 	@Override
@@ -285,7 +279,6 @@ public class RoomDaoImpl implements IRoomDao {
 	 * 
 	 * @author HariharanB
 	 * @param roomType To search for the rooms with this matching type
-	 * @see Room table in the PGAppDB database
 	 * @return The list containing the room objects that match user given room type
 	 */
 	@Override
@@ -333,7 +326,6 @@ public class RoomDaoImpl implements IRoomDao {
 	 * 
 	 * @author HariharanB
 	 * @param roomId The Room ID for deleting
-	 * @see Room table in the PGAppDB database
 	 * @return Integer - Update status
 	 */
 	@Override

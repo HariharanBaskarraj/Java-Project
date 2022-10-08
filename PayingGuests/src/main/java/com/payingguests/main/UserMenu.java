@@ -1,6 +1,3 @@
-/**
- * 
- */
 package com.payingguests.main;
 
 import java.util.List;
@@ -16,12 +13,14 @@ import com.payingguests.service.IRoomService;
 import com.payingguests.service.PayingGuestServiceImpl;
 import com.payingguests.service.RoomServiceImpl;
 
-/**
- * @author HariharanB
- *
- */
 public class UserMenu {
 
+	/**
+	 * This method is responsible for all the operations on Paying Guest and Room operations.
+	 * 
+	 * @author HariharanB
+	 * @return Nothing
+	 */
 	public void menu() {
 		@SuppressWarnings("resource")
 		Scanner sc = new Scanner(System.in);

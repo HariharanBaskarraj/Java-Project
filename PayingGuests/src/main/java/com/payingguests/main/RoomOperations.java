@@ -1,6 +1,3 @@
-/**
- * 
- */
 package com.payingguests.main;
 
 import java.util.Scanner;
@@ -8,11 +5,14 @@ import java.util.Scanner;
 import com.payingguests.service.BookServiceImpl;
 import com.payingguests.service.IBookService;
 
-/**
- * @author HariharanB
- *
- */
 public class RoomOperations {
+	
+	/**
+	 * This method is responsible for operations like booking and vacating a room.
+	 * 
+	 * @author HariharanB
+	 * @return Nothing
+	 */
 	public void bookRoom() {
 		@SuppressWarnings("resource")
 		Scanner sc = new Scanner(System.in);

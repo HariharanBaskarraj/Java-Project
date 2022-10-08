@@ -1,6 +1,3 @@
-/**
- * 
- */
 package com.payingguests.main;
 
 import java.util.Scanner;
@@ -9,12 +6,15 @@ import com.payingguests.model.User;
 import com.payingguests.service.IUserService;
 import com.payingguests.service.UserServiceImpl;
 
-/**
- * @author HariharanB
- *
- */
 public class Login {
 
+	/**
+	 * This method is responsible for user operations like registering new user,
+	 * validating existing users and changing the password.
+	 * 
+	 * @author HariharanB
+	 * @return Nothing
+	 */
 	public void login() {
 		@SuppressWarnings("resource")
 		Scanner sc = new Scanner(System.in);
@@ -22,7 +22,7 @@ public class Login {
 		User user = null;
 		System.out.println(
 				"Welcome to the Paying Guests Booking App\n1)Are you a new user? Register\n2)Existing user?? Login"
-				+ "\n3)Change Password");
+						+ "\n3)Change Password");
 		int choice = sc.nextInt();
 		sc.nextLine();
 		switch (choice) {
@@ -54,17 +54,17 @@ public class Login {
 			userService.login(username, password);
 			System.out.println("You are logged in successfully...\n");
 			break;
-			
+
 		case 3:
 			System.out.println("Enter your username:");
-			username=sc.nextLine();
+			username = sc.nextLine();
 			System.out.println("Enter your old password:");
 			String oldPassword = sc.nextLine();
 			System.out.println("Enter the new password:");
 			password = sc.nextLine();
 			userService.changePassword(username, oldPassword, password);
 			break;
-			
+
 		default:
 			System.out.println("Enter valid options!!!");
 			System.exit(0);

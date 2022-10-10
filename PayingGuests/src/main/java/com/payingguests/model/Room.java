@@ -1,7 +1,7 @@
 package com.payingguests.model;
 
 public class Room {
-	private int roomId;
+	private Integer roomId;
 	private String type;
 	private String share;
 	private boolean availability;
@@ -11,7 +11,7 @@ public class Room {
 		super();
 	}
 
-	public Room(int roomId, String type, String share, boolean availability, double price) {
+	public Room(Integer roomId, String type, String share, boolean availability, double price) {
 		super();
 		this.roomId = roomId;
 		this.type = type;
@@ -20,7 +20,7 @@ public class Room {
 		this.price = price;
 	}
 
-	public int getRoomId() {
+	public Integer getRoomId() {
 		return roomId;
 	}
 

@@ -16,16 +16,20 @@ public class UserServiceImpl implements IUserService {
 	@Override
 	public User login(String username, String password) {
 		User result = userDao.login(username, password);
+		
 		if (result == null)
 			throw new UserNotFoundException("User is not found in the database. Kindly regiter.");
+		
 		return result;
 	}
 
 	@Override
-	public int changePassword(String username, String oldPassword,String password) {
+	public int changePassword(String username, String oldPassword, String password) {
 		int result = userDao.changePassword(username, oldPassword, password);
+		
 		if (result == 0)
 			throw new UserNotFoundException("User does not exists");
+		
 		return result;
 	}
 
